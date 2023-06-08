@@ -4,43 +4,41 @@ import time
 import random
 import pydirectinput
 
-def start_button_click(selected_item):
-    print("Start button clicked with selected item:", selected_item)
-    find_character(selected_item)
+def start_button_click(selected_item, auto):
+    print("Start button clicked with selected item:", selected_item, auto)
+    find_character(selected_item, auto)
 
-def isAuto(auto_value):
-    global auto
-    auto = auto_value
-
-def find_character(selected_item):
+def find_character(selected_item, auto):
     while True:
         for s in selected_item:
-            find = pyautogui.locateCenterOnScreen("./img/"+s+".png", region=(413, 900, 130, 25), confidence=0.6)
+            find = pyautogui.locateCenterOnScreen("./img/"+s+".png", region=(560, 940, 130, 50), confidence=0.65)
             if find != None:
                 print(find)
-                pyautogui.click(find[0]+100, find[1])
+                pyautogui.click(find[0]+50, find[1]-50)
                 pyautogui.mouseUp(button='left')
-            find = pyautogui.locateCenterOnScreen("./img/"+s+".png", region=(576, 900, 130, 25), confidence=0.6)
+            find = pyautogui.locateCenterOnScreen("./img/"+s+".png", region=(728, 940, 130, 50) , confidence=0.65)
             if find != None:
                 print(find)
-                pyautogui.click(find[0]+100, find[1])
+                pyautogui.click(find[0]+50, find[1]-50)
                 pyautogui.mouseUp(button='left')
-            find = pyautogui.locateCenterOnScreen("./img/"+s+".png", region=(743, 900, 130, 25), confidence=0.6)
+            find = pyautogui.locateCenterOnScreen("./img/"+s+".png", region=(895, 940, 130, 50), confidence=0.65)
             if find != None:
                 print(find)
-                pyautogui.click(find[0]+100, find[1])
+                pyautogui.click(find[0]+50, find[1]-50)
                 pyautogui.mouseUp(button='left')
-            find = pyautogui.locateCenterOnScreen("./img/"+s+".png", region=(912, 900, 130, 25), confidence=0.6)
+            find = pyautogui.locateCenterOnScreen("./img/"+s+".png", region=(1060, 940, 130, 50), confidence=0.65)
             if find != None:
                 print(find)
-                pyautogui.click(find[0]+100, find[1])
+                pyautogui.click(find[0]+50, find[1]-50)
                 pyautogui.mouseUp(button='left')
-            find = pyautogui.locateCenterOnScreen("./img/"+s+".png", region=(1082, 900, 130, 25), confidence=0.6)
+            find = pyautogui.locateCenterOnScreen("./img/"+s+".png", region=(1230, 940, 130, 50), confidence=0.65)
             if find != None:
                 print(find)
-                pyautogui.click(find[0]+100, find[1])
+                pyautogui.click(find[0]+50, find[1]-50)
                 pyautogui.mouseUp(button='left')
         else:
             if auto:
                 pydirectinput.keyDown('d')
                 pydirectinput.keyUp('d')
+            else:
+                break
