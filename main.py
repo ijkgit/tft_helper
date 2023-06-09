@@ -9,7 +9,7 @@ def start_button_click(selected_item, auto):
     find_character(selected_item, auto)
 
 def image_search(s, x, y, width, height):
-    find = pyautogui.locateCenterOnScreen("./img/"+s+".png", region=(x, y, width, height), confidence=0.61)
+    find = pyautogui.locateCenterOnScreen("./img/"+s+".png", region=(x, y, width, height), confidence=0.7)
     if find != None:
         print(find)
         pyautogui.click(find[0]+50, find[1]-50)
